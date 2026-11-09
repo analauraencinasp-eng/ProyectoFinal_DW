@@ -1,0 +1,301 @@
+/* =========================================================
+   componentes.css — Piezas reutilizables
+   (cada una será un componente de React en la Entrega 3)
+   ========================================================= */
+
+/* ---------- Boton ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-s);
+  min-height: var(--alto-control);
+  min-width: 2.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--texto-base);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.boton--primario {
+  background: var(--color-acento);
+  color: var(--color-primario);
+}
+
+.boton--primario:hover {
+  background: var(--color-acento-oscuro);
+}
+
+.boton--secundario {
+  background: var(--color-superficie);
+  color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.boton--secundario:hover {
+  background: var(--color-suave);
+}
+
+.boton--oscuro {
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+.boton--oscuro:hover {
+  background: var(--color-encabezado);
+}
+
+.boton--claro {
+  background: var(--color-superficie);
+  color: var(--color-primario);
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+.boton svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-m);
+}
+
+/* ---------- Boton de ayuda flotante (RF-052) ---------- */
+.boton-ayuda {
+  position: fixed;
+  right: var(--espacio-m);
+  bottom: var(--espacio-m);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  min-height: 3.5rem;
+  padding: 0.5rem 1.25rem 0.5rem 1rem;
+  background: var(--color-acento);
+  color: var(--color-primario);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio-pildora);
+  box-shadow: var(--sombra);
+}
+
+.boton-ayuda:hover {
+  background: var(--color-acento-oscuro);
+}
+
+.boton-ayuda svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ---------- Tarjeta (contenedor genérico) ---------- */
+.tarjeta {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--espacio-l);
+}
+
+.tarjeta--suave {
+  background: var(--color-suave);
+  border-color: transparent;
+}
+
+.tarjeta--destacada {
+  background: #fff4ef;
+  border-color: var(--color-acento);
+}
+
+/* ---------- Tarjeta de vacante ---------- */
+.tarjeta-vacante {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  height: 100%;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--espacio-l);
+}
+
+.tarjeta-vacante__titulo {
+  font-family: var(--fuente-base);
+  font-size: var(--texto-h3);
+  font-weight: 600;
+  margin: 0;
+}
+
+.tarjeta-vacante__empresa {
+  margin: 0;
+}
+
+.tarjeta-vacante__datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta-vacante__fecha {
+  margin: 0;
+  color: var(--color-texto-secundario);
+}
+
+.tarjeta-vacante .boton {
+  margin-top: auto;
+}
+
+/* ---------- Dato con ícono (ubicación, sueldo, horario) ---------- */
+.dato {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+}
+
+.dato svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  fill: currentColor;
+}
+
+/* ---------- Etiqueta de estatus ---------- */
+.etiqueta-estatus {
+  display: inline-block;
+  padding: var(--espacio-xs) 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radio-pildora);
+}
+
+.etiqueta-estatus--revision {
+  background: var(--estatus-revision-fondo);
+  color: var(--estatus-revision-texto);
+}
+
+.etiqueta-estatus--aceptada,
+.etiqueta-estatus--activa {
+  background: var(--estatus-aceptada-fondo);
+  color: var(--estatus-aceptada-texto);
+}
+
+.etiqueta-estatus--rechazada {
+  background: var(--estatus-rechazada-fondo);
+  color: var(--estatus-rechazada-texto);
+}
+
+.etiqueta-estatus--pendiente {
+  background: var(--estatus-pendiente-fondo);
+  color: var(--estatus-pendiente-texto);
+}
+
+.etiqueta-estatus--cerrada {
+  background: var(--estatus-cerrada-fondo);
+  color: var(--estatus-cerrada-texto);
+}
+
+/* ---------- Campo de formulario ---------- */
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.campo-formulario label {
+  font-weight: 500;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  width: 100%;
+  min-height: var(--alto-control);
+  padding: 0.75rem 0.875rem;
+  background: var(--color-superficie);
+  border: 2px solid var(--color-borde-campo);
+  border-radius: var(--radio);
+}
+
+.campo-formulario textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.campo-formulario input:focus-visible,
+.campo-formulario select:focus-visible,
+.campo-formulario textarea:focus-visible {
+  border-color: var(--color-foco);
+}
+
+.campo-formulario__ayuda {
+  margin: 0;
+  color: var(--color-texto-secundario);
+}
+
+.campo-formulario__error {
+  margin: 0;
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* Grupo de campos (fieldset) */
+.grupo-campos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin: 0 0 var(--espacio-l);
+  padding: var(--espacio-l);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+}
+
+.grupo-campos legend {
+  padding-left: var(--espacio-s);
+  padding-right: var(--espacio-s);
+  font-size: var(--texto-h3);
+  font-weight: 600;
+}
+
+/* Radio y casilla */
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  accent-color: var(--color-primario);
+}
+
+/* ---------- Divisor ---------- */
+.divisor {
+  margin: var(--espacio-m) 0;
+  border: 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+/* ---------- Mensaje de estado vacío ---------- */
+.estado-vacio {
+  text-align: center;
+  padding: var(--espacio-xxl) var(--espacio-l);
+}
